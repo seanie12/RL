@@ -152,7 +152,7 @@ class QLearningAgent(ReinforcementAgent):
             sample = reward
         else:
             sample = reward + self.discount * self.getQValue(nextState, nextAction)
-        qval += self.alpha *(sample - qval)
+        qval += self.alpha *(sample - qval) 
         
         self.qValues[(state,action)] = qval
 
@@ -219,10 +219,10 @@ class ApproximateQAgent(PacmanQAgent):
         """
 
         "*** YOUR CODE HERE ***"
-        feats = self.featExtractor.getFeatures(state, action)
+        features = self.featExtractor.getFeatures(state, action)
         qval = 0
-        for f in feats:
-          qval += feats[f] * self.getWeights()[f]
+        for feature in features.keys():
+          qval += features[feature] * self.getWeights()[feature]
         return qval
 
 
@@ -233,17 +233,18 @@ class ApproximateQAgent(PacmanQAgent):
         "*** YOUR CODE HERE ***"
         features = self.featExtractor.getFeatures(state,action)
         legalActions = self.getLegalActions(nextState)
-        #derivative respect to feature :
+        #derivative respect to weight :
         #[r + gamma * max_a'_Q(s',a')-] *fm(s,a)
         weights = self.getWeights()           
         difference = 0
+        qsa = self.getQValue(state,action)
         if len(legalActions) == 0:
-            difference = reward - self.getQValue(state,action)
+            difference = reward - qsa
         else:
-            difference = reward + \
-            (self.discount *self.getValue(nextState)-self.getQValue(state,action) )
+            target = max([self.getQValue(nextState,nextAction) for nextAction in legalActions])
+            difference = (reward + self.discount *target )-qsa
        
-        for feature in features: 
+        for feature in features.keys(): 
             weights[feature] += self.alpha * difference * features[feature]
 
     def final(self, state):
