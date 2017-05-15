@@ -415,11 +415,11 @@ q_values_k_3_action_east: """
 """
 
 q_values_k_3_action_exit: """
-            0.0000      illegal       0.0000      illegal      illegal
-            0.0000      illegal   __________      illegal      illegal
-            0.0000      illegal       0.0000      illegal      illegal
-            0.0000      illegal   __________   __________      illegal
-           -1.0000      illegal      illegal      illegal      illegal
+           0.0000      illegal       0.0000      illegal      illegal
+           0.0000      illegal   __________      illegal      illegal
+          -1.0000      illegal       0.0000      illegal      illegal
+           0.0000      illegal   __________   __________      illegal
+           0.0000      illegal      illegal      illegal      illegal
 """
 
 q_values_k_3_action_south: """
@@ -527,9 +527,9 @@ q_values_k_4_action_east: """
 q_values_k_4_action_exit: """
             0.0000      illegal       0.0000      illegal      illegal
             0.0000      illegal   __________      illegal      illegal
-            0.0000      illegal       0.0000      illegal      illegal
+           -1.0000      illegal       0.0000      illegal      illegal
             0.0000      illegal   __________   __________      illegal
-           -1.0000      illegal      illegal      illegal      illegal
+            0.0000      illegal      illegal      illegal      illegal
 """
 
 q_values_k_4_action_south: """
@@ -635,11 +635,11 @@ q_values_k_5_action_east: """
 """
 
 q_values_k_5_action_exit: """
-            0.0000      illegal       0.0000      illegal      illegal
-            0.0000      illegal   __________      illegal      illegal
-            0.0000      illegal       0.0000      illegal      illegal
-            0.0000      illegal   __________   __________      illegal
-           -1.0000      illegal      illegal      illegal      illegal
+        0.0000      illegal       0.0000      illegal      illegal
+        0.0000      illegal   __________      illegal      illegal
+       -1.0000      illegal       0.0000      illegal      illegal
+        0.0000      illegal   __________   __________      illegal
+        0.0000      illegal      illegal      illegal      illegal
 """
 
 q_values_k_5_action_south: """
@@ -745,11 +745,11 @@ q_values_k_6_action_east: """
 """
 
 q_values_k_6_action_exit: """
-            0.0000      illegal       0.0000      illegal      illegal
-           -1.0000      illegal   __________      illegal      illegal
-            0.0000      illegal       0.0000      illegal      illegal
-            0.0000      illegal   __________   __________      illegal
-           -1.0000      illegal      illegal      illegal      illegal
+        0.0000      illegal       0.0000      illegal      illegal
+        0.0000      illegal   __________      illegal      illegal
+       -1.0000      illegal       0.0000      illegal      illegal
+        0.0000      illegal   __________   __________      illegal
+        0.0000      illegal      illegal      illegal      illegal
 """
 
 q_values_k_6_action_south: """
@@ -855,11 +855,11 @@ q_values_k_7_action_east: """
 """
 
 q_values_k_7_action_exit: """
-            0.0000      illegal       0.0000      illegal      illegal
-           -1.0000      illegal   __________      illegal      illegal
-            0.0000      illegal       0.1000      illegal      illegal
-            0.0000      illegal   __________   __________      illegal
-           -1.0000      illegal      illegal      illegal      illegal
+       -1.0000      illegal       0.0000      illegal      illegal
+        0.0000      illegal   __________      illegal      illegal
+       -1.0000      illegal       0.0000      illegal      illegal
+        0.0000      illegal   __________   __________      illegal
+        0.0000      illegal      illegal      illegal      illegal
 """
 
 q_values_k_7_action_south: """
@@ -965,11 +965,11 @@ q_values_k_8_action_east: """
 """
 
 q_values_k_8_action_exit: """
-            0.0000      illegal       0.0000      illegal      illegal
-           -1.0000      illegal   __________      illegal      illegal
-            0.0000      illegal       0.1000      illegal      illegal
-           -1.0000      illegal   __________   __________      illegal
-           -1.0000      illegal      illegal      illegal      illegal
+       -1.0000      illegal       0.0000      illegal      illegal
+        0.0000      illegal   __________      illegal      illegal
+       -1.0000      illegal       0.0000      illegal      illegal
+        0.0000      illegal   __________   __________      illegal
+        0.0000      illegal      illegal      illegal      illegal
 """
 
 q_values_k_8_action_south: """
@@ -1059,11 +1059,11 @@ weights_k_9: """
 """
 
 q_values_k_9_action_north: """
-           illegal       0.0000      illegal       0.0000       0.0000
-           illegal       0.0000   __________       0.0000       0.0000
-           illegal       0.0000      illegal       0.0000       0.0000
-           illegal      -0.0900   __________   __________       0.0000
-           illegal       0.0000       0.0000       0.0000       0.0000
+       illegal       0.0000      illegal       0.0000       0.0000
+       illegal       0.0000   __________       0.0000       0.0000
+       illegal       0.0000      illegal       0.0000       0.0000
+       illegal       0.0000   __________   __________       0.0000
+       illegal       0.0000       0.0000       0.0000       0.0000
 """
 
 q_values_k_9_action_east: """
@@ -1075,11 +1075,11 @@ q_values_k_9_action_east: """
 """
 
 q_values_k_9_action_exit: """
-            0.0000      illegal       0.0000      illegal      illegal
-           -1.0000      illegal   __________      illegal      illegal
-            0.0000      illegal       0.1000      illegal      illegal
-           -1.0000      illegal   __________   __________      illegal
-           -1.0000      illegal      illegal      illegal      illegal
+       -1.0000      illegal       0.0000      illegal      illegal
+        0.0000      illegal   __________      illegal      illegal
+       -1.0000      illegal       0.0000      illegal      illegal
+        0.0000      illegal   __________   __________      illegal
+        0.0000      illegal      illegal      illegal      illegal
 """
 
 q_values_k_9_action_south: """
@@ -1169,19 +1169,19 @@ weights_k_3000: """
 """
 
 q_values_k_3000_action_north: """
-           illegal       4.3205      illegal       6.1517       3.8095
-           illegal       4.4238   __________       5.2284       3.5129
-           illegal       1.0694      illegal       3.6867       2.0418
-           illegal       0.3423   __________   __________       1.0655
-           illegal       0.0073       0.0079       0.0484       0.3768
+       illegal       4.9641      illegal       6.0300       4.6177
+       illegal       5.0861   __________       5.7217       3.9590
+       illegal       1.6155      illegal       3.2966       2.7418
+       illegal      -0.2029   __________   __________       1.3173
+       illegal      -1.9677       0.0081       0.0180       0.3874
 """
 
 q_values_k_3000_action_east: """
-           illegal       8.0584      illegal       3.7245       3.3947
-           illegal       2.0499   __________       3.2373       2.1742
-           illegal       0.8687      illegal       1.7398       1.2671
-           illegal       0.2927   __________   __________       0.6669
-           illegal       0.0239       0.0097       0.1611       0.2051
+       illegal       8.0360      illegal       4.3833       3.6665
+       illegal       2.5835   __________       1.7820       1.9937
+       illegal       0.9566      illegal       1.7312       1.2285
+       illegal       0.0995   __________   __________       0.4922
+       illegal       0.0079       0.0212       0.0802       0.1640
 """
 
 q_values_k_3000_action_exit: """
@@ -1193,18 +1193,17 @@ q_values_k_3000_action_exit: """
 """
 
 q_values_k_3000_action_south: """
-           illegal      -0.3521      illegal       3.6948       2.9139
-           illegal      -0.5605   __________       2.1346       1.5674
-           illegal       0.2093      illegal       1.5389       0.5521
-           illegal      -0.5505   __________   __________       0.1006
-           illegal      -1.8501       0.0060       0.0514       0.1223
+       illegal       2.9365      illegal       4.1352       3.1991
+       illegal      -1.1517   __________       2.9145       1.4699
+       illegal      -1.0717      illegal       2.0222       0.5210
+       illegal      -0.7225   __________   __________       0.2626
+       illegal      -0.0599       0.0142       0.0230       0.0836
 """
 
 q_values_k_3000_action_west: """
-           illegal      -6.2001      illegal       7.5146       4.9014
-           illegal      -5.4013   __________       4.0484       3.4126
-           illegal      -8.0399      illegal       0.9653       1.6081
-           illegal      -7.4767   __________   __________       0.3934
-           illegal      -6.3432       0.0179       0.0188       0.1028
+       illegal      -3.8942      illegal       8.2094       5.7364
+       illegal      -6.7016   __________       3.4423       2.9816
+       illegal      -6.3498      illegal       0.8134       1.8101
+       illegal      -7.1207   __________   __________       0.5260
+       illegal      -7.9571       0.0069       0.0147       0.0682
 """
-

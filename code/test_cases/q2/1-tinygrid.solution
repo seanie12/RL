@@ -98,7 +98,7 @@ q_values_k_2_action_east: """
 """
 
 q_values_k_2_action_exit: """
-            0.0000
+           -1.0000
            illegal
             1.0000
 """
@@ -137,7 +137,7 @@ q_values_k_3_action_east: """
 """
 
 q_values_k_3_action_exit: """
-            0.0000
+           -1.0000
            illegal
             1.9000
 """
@@ -176,14 +176,14 @@ q_values_k_4_action_east: """
 """
 
 q_values_k_4_action_exit: """
-            0.0000
+           -1.0000
            illegal
-            2.7100
+            1.9000
 """
 
 q_values_k_4_action_south: """
            illegal
-            0.0000
+            0.0950
            illegal
 """
 
@@ -222,7 +222,7 @@ q_values_k_5_action_exit: """
 
 q_values_k_5_action_south: """
            illegal
-            0.0000
+            0.0950
            illegal
 """
 
@@ -254,14 +254,14 @@ q_values_k_6_action_east: """
 """
 
 q_values_k_6_action_exit: """
-           -1.0000
+           -1.9000
            illegal
-            3.4390
+            2.7100
 """
 
 q_values_k_6_action_south: """
            illegal
-            0.0000
+            0.0950
            illegal
 """
 
@@ -293,14 +293,14 @@ q_values_k_7_action_east: """
 """
 
 q_values_k_7_action_exit: """
-           -1.0000
+           -1.9000
            illegal
             3.4390
 """
 
 q_values_k_7_action_south: """
            illegal
-            0.1720
+            0.0950
            illegal
 """
 
@@ -332,14 +332,14 @@ q_values_k_8_action_east: """
 """
 
 q_values_k_8_action_exit: """
-           -1.0000
+           -2.7100
            illegal
-            4.0951
+            3.4390
 """
 
 q_values_k_8_action_south: """
            illegal
-            0.1720
+            0.0950
            illegal
 """
 
@@ -371,14 +371,14 @@ q_values_k_9_action_east: """
 """
 
 q_values_k_9_action_exit: """
-           -1.0000
+           -3.4390
            illegal
-            4.6856
+            3.4390
 """
 
 q_values_k_9_action_south: """
            illegal
-            0.1720
+            0.0950
            illegal
 """
 
@@ -399,31 +399,30 @@ weights_k_100: """
 
 q_values_k_100_action_north: """
            illegal
-           -0.4534
+           -2.0195
            illegal
 """
 
 q_values_k_100_action_east: """
            illegal
-            0.4063
+            0.6226
            illegal
 """
 
 q_values_k_100_action_exit: """
-           -9.4767
+           -9.7497
            illegal
-            9.8175
+            9.6566
 """
 
 q_values_k_100_action_south: """
            illegal
-            2.1267
+            2.0110
            illegal
 """
 
 q_values_k_100_action_west: """
            illegal
-            0.3919
+            0.3377
            illegal
 """
-

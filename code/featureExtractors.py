@@ -106,7 +106,62 @@ class SimpleExtractor(FeatureExtractor):
 class CustomExtractor(FeatureExtractor):
     """
     Generate your own feature
+    use class AgentState in game.py, getLegalNeighbors() in game.py etc
     """
     def getFeatures(self, state, action):
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        food = state.getFood() # Returns a Grid of boolean food indicator variables.
+        walls = state.getWalls() #positions of walls
+        ghosts = state.getGhostPositions() # positions of ghosts
+        capsules = state.getCapsules() #positions of reamining capsules
+        scaredGhosts = []
+        activeGhosts = []
+        features = util.Counter() #extensions of dictionary
+        
+        features["bias"] = 1.0
+        x, y = state.getPacmanPosition()
+        dx, dy = Actions.directionToVector(action)
+        next_x, next_y = int(x+dx), int(y+dy)
+        features["#-of-ghosts-1-step-away"] = sum( (next_x,next_y) in \
+                Actions.getLegalNeighbors(g,walls) for g in ghosts)
+        
+        if  features["#-of-ghosts-1-step-away"] == 0 and food[next_x][next_y]:
+            features["eats-food"] = 1.0
+            
+        dist = closestFood((next_x,next_y), food, walls)
+        if dist is not None:
+            features["closest-food"] = float(dist)/(walls.width*walls.height)
+        #in util.py manhattanDistance( xy1, xy2 ):
+        #"Returns the Manhattan distance between points xy1 and xy2"
+        nearest_capsule_dist = float('inf')
+        if len(capsules) == 0 :
+            features["nearest-capsule-distance"] = 10
+        else:
+            for capsulePosition in capsules:
+                distance = util.manhattanDistance([x,y],capsulePosition)
+                if distance < nearest_capsule_dist:
+                    nearest_capsule_dist = distance
+            features["nearest-capsule-distance"] = float(nearest_capsule_dist) / (walls.width*walls.height)
+        
+        #ghost.scaredTimer -> time duration of scared ghost
+        for ghost in state.getGhostStates():
+            if ghost.scaredTimer !=0:
+                scaredGhosts.append(ghost)
+            else:
+                activeGhosts.append(ghost)
+                
+        
+        if len(scaredGhosts) !=0:
+            dis_from_scared_ghost = min([util.manhattanDistance([x,y],ghost.getPosition()) for ghost in scaredGhosts])
+            if len(activeGhosts) != 0 :    
+                dis_from_active_ghost = min([util.manhattanDistance([x,y],ghost.getPosition()) for ghost in activeGhosts])
+            else:
+                dis_from_active_ghost = 10
+            if dis_from_scared_ghost <= 3 and dis_from_active_ghost >=5:
+                #features["dis-from-scared-ghost"] = dis_from_scared_ghost 
+                features["#-of-ghosts-1-step-away"] = 0
+                features["eats-food"] = 0
+                
+        
+        features.divideAll(10.0)
+        return features
