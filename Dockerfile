@@ -7,7 +7,6 @@ RUN pip install --upgrade pip
 
 RUN mkdir files
 WORKDIR /files
-RUN cd files
 RUN wget https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.ko.vec
 
 RUN apt-get update
